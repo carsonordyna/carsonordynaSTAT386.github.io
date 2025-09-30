@@ -52,11 +52,13 @@ Now, I'll present a simple example (using the `lifelines` Python library, [link 
 
 ```{python}
 #| eval: false
+#| warning: false
 # Install "lifelines" library if not already installed
 !pip install lifelines
 ```
 ```{python}
 # Import libraries
+#| warning: false
 import pandas as pd
 from lifelines import CoxPHFitter
 
