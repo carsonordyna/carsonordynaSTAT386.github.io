@@ -226,8 +226,9 @@ window.Quarto = {
   <li><a href="#the-cox-proportional-hazards-model-a-brief-introduction-and-demo" id="toc-the-cox-proportional-hazards-model-a-brief-introduction-and-demo" class="nav-link active" data-scroll-target="#the-cox-proportional-hazards-model-a-brief-introduction-and-demo">The Cox Proportional Hazards Model: A Brief Introduction and Demo</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#the-model" id="toc-the-model" class="nav-link" data-scroll-target="#the-model">The Model</a></li>
-  <li><a href="#demo" id="toc-demo" class="nav-link" data-scroll-target="#demo">Demo</a></li>
+  <li><a href="#the-mathematical-model" id="toc-the-mathematical-model" class="nav-link" data-scroll-target="#the-mathematical-model">The Mathematical Model</a></li>
+  <li><a href="#a-brief-demo" id="toc-a-brief-demo" class="nav-link" data-scroll-target="#a-brief-demo">A Brief Demo</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -256,14 +257,29 @@ window.Quarto = {
 
 <section id="the-cox-proportional-hazards-model-a-brief-introduction-and-demo" class="level1">
 <h1>The Cox Proportional Hazards Model: A Brief Introduction and Demo</h1>
+<section id="outline" class="level5">
+<h5 class="anchored" data-anchor-id="outline">Outline</h5>
+<ol type="1">
+<li>Introduction</li>
+<li>The Mathematical Model</li>
+<li>A Brief Demo</li>
+<li>Conclusion</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="doctor_stethoscope.jpg" class="img-fluid figure-img"></p>
+<figcaption>A doctor’s stethoscope</figcaption>
+</figure>
+</div>
+</section>
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
-<p>In clinical research, it is valuabel to be able to model and predict whether a patient will experience a specified event (e.g.&nbsp;death, the return of a disease like cancer, etc,). Just as important is being able to model and predict <strong><em>when</em></strong> such an event occurs (e.g.&nbsp;3 years after the diagnosis of a cancer at particular stage). This is the essence of survival analysis: the use of statistical models focused on time-to-event data. One of the most common and powerful tools in survival analysis is the Cox Proportional Hazards Model (Cox model for short), which helps us understand how different factors (age, treatment, comorbidities, etc.) influence a given individual’s changing moment-to-moment risk of a given event over time.</p>
-<p>For the last several months, I have had the privilege of working on a clinical research team at Massachusetts General Hospital. As I have reviewed scientific literature regarding lung cancer and surgical pproaches to treating it, I have seen firsthand how often prevelent this model is in medical/clinical research. This post offers a brief introduction to the Cox model and a simple, hands-on demo using Python.</p>
+<p>In clinical research, it is valuable to be able to model and predict whether a patient will experience a specified event (e.g.&nbsp;death, the return of a disease like cancer, etc.). Just as important is being able to model and predict <strong><em>when</em></strong> such an event occurs (e.g.&nbsp;3 years after the diagnosis of a cancer at a particular stage). This is a foundational focus of survival analysis: the use of statistical models trained on time-to-event data. One of the most common and powerful tools in survival analysis is the Cox Proportional Hazards Model (Cox model for short), which helps us understand how different factors (age, treatment, comorbidities, etc.) influence a given individual’s changing, moment-to-moment risk of experiencing a given event over a period of time.</p>
+<p>For the last several months, I have had the privilege of working on a clinical research team at Massachusetts General Hospital. As I have reviewed scientific literature regarding lung cancer and surgical pproaches to treating it, I have seen firsthand how prevelent this model is in medical/clinical research. This post offers a brief introduction to the Cox model and a simple, hands-on demo using <a href="https://www.geeksforgeeks.org/data-science/cox-proportional-hazards-model/">Python</a>.</p>
 </section>
-<section id="the-model" class="level3">
-<h3 class="anchored" data-anchor-id="the-model">The Model</h3>
-<p>At the core of the Cox model is the hazard function. A hazard function, <span class="math inline">\(\lambda (t)\)</span>, is one that indicates the instantaneous rate of an event occurring (e.g.&nbsp;death) at a specific time, <span class="math inline">\(t\)</span>. The baseline hazard function <span class="math inline">\(\lambda_0 (t)\)</span> refers to the hazard function when explanatory variables (i.e.&nbsp;covariates), <span class="math inline">\(X\)</span>, are at their baseline levels (e.g.&nbsp;when no treatment/medication is given, when a particular comorbidity is not present, etc.). That is, <span class="math inline">\(X_i = 0\)</span> for all <span class="math inline">\(i \in \{1, 2, ..., n \}\)</span> for <span class="math inline">\(n\)</span> covariates. The effect of each covariate is denoted as <span class="math inline">\(\beta\)</span> with <span class="math inline">\(\beta_i\)</span> denoting the effect of the <span class="math inline">\(i\)</span>-th covariate. The overall hazard function, <span class="math inline">\(\lambda(t \mid X)\)</span>, is as follows:</p>
+<section id="the-mathematical-model" class="level3">
+<h3 class="anchored" data-anchor-id="the-mathematical-model">The Mathematical Model</h3>
+<p>At the core of the Cox model is the hazard function. A hazard function, <span class="math inline">\(\lambda (t)\)</span>, is one that indicates the instantaneous rate of an event occurring—in other words, the instantaneous risk of experiencing the event (e.g.&nbsp;death)—at a specific time, <span class="math inline">\(t\)</span>. The baseline hazard function <span class="math inline">\(\lambda_0 (t)\)</span> refers to the hazard function when explanatory variables (i.e.&nbsp;covariates), <span class="math inline">\(X\)</span>, are at their baseline levels (e.g.&nbsp;when no treatment/medication is given, when a particular comorbidity is not present, etc.). That is, <span class="math inline">\(X_i = 0\)</span> for all <span class="math inline">\(i \in \{1, 2, ..., n \}\)</span> for <span class="math inline">\(n\)</span> covariates. The effect of each covariate is denoted as <span class="math inline">\(\beta\)</span> with <span class="math inline">\(\beta_i\)</span> denoting the effect of the <span class="math inline">\(i\)</span>-th covariate. The overall hazard function, <span class="math inline">\(\lambda(t \mid X)\)</span>, is as follows:</p>
 <p><span class="math display">\[
 \lambda(t \mid X) = \lambda_0 (t) e^{\displaystyle \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n}
 \]</span></p>
@@ -275,7 +291,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \frac{\lambda(t \mid X_a)}{\lambda(t \mid X_b)} = e^{\displaystyle \beta_1(X_a - X_b)}
 \]</span></p>
-<p>The right-handside of these equations are constants independent of time, <span class="math inline">\(t\)</span>. These <strong><em>constant</em></strong> proportions are the reason why the model is called the Cox <strong><em>Proportional Hazards</em></strong> model. The derivation of these results and deeper mathematical theory and background behind the model is beyond the scope of this blog.</p>
+<p>The right-hand side of these equations are constants independent of time, <span class="math inline">\(t\)</span>. These presence of these <strong><em>constant</em></strong> proportions are the reason why the model is called the Cox <strong><em>Proportional Hazards</em></strong> model. The derivation of these results and deeper mathematical theory and background behind the model is beyond the scope of this blog. More information may be found <a href="https://en.wikipedia.org/wiki/Proportional_hazards_model">here</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="harzard_graph.png" class="img-fluid figure-img"></p>
@@ -283,166 +299,83 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="demo" class="level3">
-<h3 class="anchored" data-anchor-id="demo">Demo</h3>
-<p>Now, I’ll present a simple example (using the <code>lifelines</code> Python library, [link to documentation]https://lifelines.readthedocs.io/en/latest/) of how to fit and interpret a Cox model on a small synthetic dataset.</p>
-<div id="f184b2b8" class="cell" data-execution_count="1">
+<section id="a-brief-demo" class="level3">
+<h3 class="anchored" data-anchor-id="a-brief-demo">A Brief Demo</h3>
+<p>Now, I’ll present a simple example (using the <code>lifelines</code> Python library, <a href="https://lifelines.readthedocs.io/en/latest/">link to documentation</a>) of how to fit and interpret a Cox model on a small, synthetic dataset.</p>
+<div id="87d21e0f" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lifelines if not already installed</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install "lifelines" library if not already installed</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install lifelines</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="4fc3fb14" class="cell" data-execution_count="3">
+<div id="95b40bb1" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.executable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifelines <span class="im">import</span> CoxPHFitter</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample dataset</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: [<span class="dv">79</span>, <span class="dv">50</span>, <span class="dv">45</span>, <span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">53</span>, <span class="dv">66</span>, <span class="dv">50</span>, <span class="dv">77</span>, <span class="dv">58</span>, <span class="dv">70</span>, <span class="dv">53</span>, <span class="dv">56</span>, <span class="dv">71</span>, <span class="dv">76</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">68</span>, <span class="dv">76</span>],</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'treatment'</span>: [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'gender'</span>: [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'duration'</span>: [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>],</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event'</span>: [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the Cox model</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>cph <span class="op">=</span> CoxPHFitter()</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>cph.fit(data, duration_col<span class="op">=</span><span class="st">'duration'</span>, event_col<span class="op">=</span><span class="st">'event'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the results</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> cph.summary[[<span class="st">"coef"</span>, <span class="st">"p"</span>, <span class="st">"coef lower 95%"</span>, <span class="st">"coef upper 95%"</span>]]</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>/Users/cromacair/Desktop/STAT 386/Labs/Tutorial Blog/carsonordynaSTAT386.github.io/.venv/bin/python3</code></pre>
-</div>
-</div>
-<div id="beafc24e" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import librarys</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifelines <span class="im">import</span> CoxPHFitter</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample dataset</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: [<span class="dv">60</span>, <span class="dv">50</span>, <span class="dv">45</span>, <span class="dv">70</span>, <span class="dv">65</span>],</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'treatment'</span>: [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>],</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'duration'</span>: [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event'</span>: [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the Cox model</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>cph <span class="op">=</span> CoxPHFitter()</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>cph.fit(data, duration_col<span class="op">=</span><span class="st">'duration'</span>, event_col<span class="op">=</span><span class="st">'event'</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the results</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>cph.print_summary()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/cromacair/Desktop/STAT 386/Labs/Tutorial Blog/carsonordynaSTAT386.github.io/.venv/lib/python3.11/site-packages/lifelines/utils/__init__.py:1163: ConvergenceWarning: Column age has high sample correlation with the duration column. This may harm convergence. This could be a form of 'complete separation'.     See https://stats.stackexchange.com/questions/11109/how-to-deal-with-perfect-separation-in-logistic-regression
-
-  warnings.warn(dedent(warning_text), ConvergenceWarning)
-/Users/cromacair/Desktop/STAT 386/Labs/Tutorial Blog/carsonordynaSTAT386.github.io/.venv/lib/python3.11/site-packages/lifelines/fitters/coxph_fitter.py:1607: ConvergenceWarning: Newton-Raphson convergence completed successfully but norm(delta) is still high, 2.145. This may imply non-unique solutions to the maximum likelihood. Perhaps there is collinearity or complete separation in the dataset?
-
-  warnings.warn(</code></pre>
-</div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">model</th>
-<td>lifelines.CoxPHFitter</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">duration col</th>
-<td>'duration'</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">event col</th>
-<td>'event'</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">baseline estimation</th>
-<td>breslow</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">number of observations</th>
-<td>5</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">number of events observed</th>
-<td>3</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">partial log-likelihood</th>
-<td>-1.39</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">time fit was run</th>
-<td>2025-09-30 02:29:56 UTC</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th" style="min-width: 12px"></th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">coef</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">exp(coef)</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">se(coef)</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">coef lower 95%</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">coef upper 95%</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">exp(coef) lower 95%</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">exp(coef) upper 95%</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">cmp to</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">z</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">p</th>
-<th data-quarto-table-cell-role="th" style="min-width: 12px">-log2(p)</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">coef</th>
+<th data-quarto-table-cell-role="th">p</th>
+<th data-quarto-table-cell-role="th">coef lower 95%</th>
+<th data-quarto-table-cell-role="th">coef upper 95%</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">covariate</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">age</th>
-<td>3.00</td>
-<td>20.10</td>
-<td>512.01</td>
-<td>-1000.53</td>
-<td>1006.53</td>
-<td>0.00</td>
-<td>inf</td>
-<td>0.00</td>
-<td>0.01</td>
-<td>1.00</td>
-<td>0.01</td>
+<td>0.124049</td>
+<td>0.026572</td>
+<td>0.014419</td>
+<td>0.233679</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">treatment</th>
-<td>15.00</td>
-<td>3.28e+06</td>
-<td>2560.07</td>
-<td>-5002.65</td>
-<td>5032.65</td>
-<td>0.00</td>
-<td>inf</td>
-<td>0.00</td>
-<td>0.01</td>
-<td>1.00</td>
-<td>0.01</td>
-</tr>
-</tbody>
-</table>
-<br><div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Concordance</th>
-<td>0.93</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Partial AIC</th>
-<td>6.77</td>
+<td>-2.023659</td>
+<td>0.018711</td>
+<td>-3.710554</td>
+<td>-0.336763</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">log-likelihood ratio test</th>
-<td>4.03 on 2 df</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">-log2(p) of ll-ratio test</th>
-<td>2.91</td>
+<th data-quarto-table-cell-role="th">gender</th>
+<td>0.272174</td>
+<td>0.736929</td>
+<td>-1.315843</td>
+<td>1.860192</td>
 </tr>
 </tbody>
 </table>
@@ -450,7 +383,12 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Hooray!</p>
+<p>In the summary table, at the <span class="math inline">\(\alpha = 0.05\)</span> level, we observe evidence that the <span class="math inline">\(\beta\)</span> for <code>age</code> and <code>treatment</code> is statistically different from 0. For <code>age</code>, the estimate of <span class="math inline">\(\beta\)</span> is positive, indicating that older individuals exhibit a <strong><em>higher</em></strong> instantaneous risk of experiencing the specified event (e.g.&nbsp;death). For <code>treatment</code>, we see that the estimate for <span class="math inline">\(\beta\)</span> is negative, indicating that individuals who receive the specified <code>treatment</code> (i.e.&nbsp;<code>treatment = 1</code>) exhibit a <strong><em>lower</em></strong> instantaneous risk of experiencing the specified event. Also note that the <span class="math inline">\(\beta\)</span> for <code>gender</code> is not statistically different from 0, indicating that <code>gender</code> probably does not influence an individual’s risk.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>To summarize, the Cox Proportional Hazards Model is a useful tool for analyzing time-to-event data, especially in healthcare and clinical research. It allows us to quantify how different factors influence the timing of critical events.</p>
+<p>I invite you to further study the <a href="https://www.graphpad.com/guides/prism/latest/statistics/stat_cox_regression_mathematics.htm">math behind the model</a> and/or find a dataset of interest (e.g.&nbsp;from <a href="https://www.kaggle.com/datasets/gilsousa/habermans-survival-data-set">Kaggle’s medical datasets</a>) and try fitting a Cox model using <code>lifelines</code>. After interpreting the results, you may consder sharing your findings in a GitHub repo or in a blog post like this one.</p>
 
 
 <!-- -->
@@ -910,91 +848,95 @@ window.Quarto = {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Tutorial Blog"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Cox Proportional Hazards Model: A Brief Introduction and Demo</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>In clinical research, it is valuabel to be able to model and predict whether a patient will experience a specified event (e.g. death, the return of a disease like cancer, etc,). Just as important is being able to model and predict ***when*** such an event occurs (e.g. 3 years after the diagnosis of a cancer at particular stage). This is the essence of survival analysis: the use of statistical models focused on time-to-event data. One of the most common and powerful tools in survival analysis is the Cox Proportional Hazards Model (Cox model for short), which helps us understand how different factors (age, treatment, comorbidities, etc.) influence a given individual's changing  moment-to-moment risk of a given event over time.</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>For the last several months, I have had the privilege of working on a clinical research team at Massachusetts General Hospital. As I have reviewed scientific literature regarding lung cancer and surgical pproaches to treating it, I have seen firsthand how often prevelent this model is in medical/clinical research. This post offers a brief introduction to the Cox model and a simple, hands-on demo using Python.</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Model</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>At the core of the Cox model is the hazard function. A hazard function, $\lambda (t)$, is one that indicates the instantaneous rate of an event occurring (e.g. death) at a specific time, $t$. The baseline hazard function $\lambda_0 (t)$ refers to the hazard function when explanatory variables (i.e. covariates), $X$, are at their baseline levels (e.g. when no treatment/medication is given, when a particular comorbidity is not present, etc.). That is, $X_i = 0$ for all $i \in <span class="sc">\{</span>1, 2, ..., n <span class="sc">\}</span>$ for $n$ covariates. The effect of each covariate is denoted as $\beta$ with $\beta_i$ denoting the effect of the $i$-th covariate. The overall hazard function, $\lambda(t \mid X)$, is as follows:</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>\lambda(t \mid X) = \lambda_0 (t) e^{\displaystyle \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n}</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>where $X =$ $(X_1, X_2, ..., X_n)$ is the covariate vector. Note that if $\beta_i &gt; 0$, then increasing $X_i$ (or $X_i = 1$ if binary) means an increased risk, and if $\beta_i &lt; 0$, then increasing $X_i$ (or $X_i = 1$ if binary) means a decreased risk. In the case of a single covariate, $\beta_1$, it can be shown that</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>\frac{\lambda(t \mid x + 1)}{\lambda(t \mid x)} = e^{\displaystyle \beta_1}</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>When comparing two patients, $a$ and $b$, in the single covariate case, it can also be shown that</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>\frac{\lambda(t \mid X_a)}{\lambda(t \mid X_b)} = e^{\displaystyle \beta_1(X_a - X_b)}</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>The right-handside of these equations are constants independent of time, $t$. These ***constant*** proportions are the reason why the model is called the Cox ***Proportional Hazards*** model. The derivation of these results and deeper mathematical theory and background behind the model is beyond the scope of this blog.</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="al">![Hazard Function Graph](harzard_graph.png)</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Demo</span></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>Now, I'll present a simple example (using the <span class="in">`lifelines`</span> Python library, <span class="co">[</span><span class="ot">link to documentation</span><span class="co">]</span>https://lifelines.readthedocs.io/en/latest/) of how to fit and interpret a Cox model on a small synthetic dataset.</span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lifelines if not already installed</span></span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install lifelines</span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install lifelines</span></span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.executable)</span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Import librarys</span></span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifelines <span class="im">import</span> CoxPHFitter</span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample dataset</span></span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: [<span class="dv">60</span>, <span class="dv">50</span>, <span class="dv">45</span>, <span class="dv">70</span>, <span class="dv">65</span>],</span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">'treatment'</span>: [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>],</span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">'duration'</span>: [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event'</span>: [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the Cox model</span></span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>cph <span class="op">=</span> CoxPHFitter()</span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>cph.fit(data, duration_col<span class="op">=</span><span class="st">'duration'</span>, event_col<span class="op">=</span><span class="st">'event'</span>)</span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the results</span></span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>cph.print_summary()</span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>Hooray!</span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conclusion</span></span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>The Cox Proportional Hazards Model is a powerful tool for analyzing time-to-event data, especially in healthcare and clinical research. It allows us to quantify how different factors influence the timing of critical events.</span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>Your next step: Find a dataset of interest—perhaps from Kaggle’s medical datasets—and try fitting a Cox model using lifelines. Interpret the hazard ratios and share your findings in a GitHub repo or blog post. Let’s build a community of reproducible, insightful survival analysis!</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Tutorial Blog"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Cox Proportional Hazards Model: A Brief Introduction and Demo</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Outline</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Introduction</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>The Mathematical Model</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>A Brief Demo</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Conclusion</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="al">![A doctor's stethoscope](doctor_stethoscope.jpg)</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>In clinical research, it is valuable to be able to model and predict whether a patient will experience a specified event (e.g. death, the return of a disease like cancer, etc.). Just as important is being able to model and predict ***when*** such an event occurs (e.g. 3 years after the diagnosis of a cancer at a particular stage). This is a foundational focus of survival analysis: the use of statistical models trained on time-to-event data. One of the most common and powerful tools in survival analysis is the Cox Proportional Hazards Model (Cox model for short), which helps us understand how different factors (age, treatment, comorbidities, etc.) influence a given individual's changing, moment-to-moment risk of experiencing a given event over a period of time.</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>For the last several months, I have had the privilege of working on a clinical research team at Massachusetts General Hospital. As I have reviewed scientific literature regarding lung cancer and surgical pproaches to treating it, I have seen firsthand how prevelent this model is in medical/clinical research. This post offers a brief introduction to the Cox model and a simple, hands-on demo using <span class="co">[</span><span class="ot">Python</span><span class="co">](https://www.geeksforgeeks.org/data-science/cox-proportional-hazards-model/)</span>.</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Mathematical Model</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>At the core of the Cox model is the hazard function. A hazard function, $\lambda (t)$, is one that indicates the instantaneous rate of an event occurring—in other words, the instantaneous risk of experiencing the event (e.g. death)—at a specific time, $t$. The baseline hazard function $\lambda_0 (t)$ refers to the hazard function when explanatory variables (i.e. covariates), $X$, are at their baseline levels (e.g. when no treatment/medication is given, when a particular comorbidity is not present, etc.). That is, $X_i = 0$ for all $i \in <span class="sc">\{</span>1, 2, ..., n <span class="sc">\}</span>$ for $n$ covariates. The effect of each covariate is denoted as $\beta$ with $\beta_i$ denoting the effect of the $i$-th covariate. The overall hazard function, $\lambda(t \mid X)$, is as follows:</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>\lambda(t \mid X) = \lambda_0 (t) e^{\displaystyle \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n}</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>where $X =$ $(X_1, X_2, ..., X_n)$ is the covariate vector. Note that if $\beta_i &gt; 0$, then increasing $X_i$ (or $X_i = 1$ if binary) means an increased risk, and if $\beta_i &lt; 0$, then increasing $X_i$ (or $X_i = 1$ if binary) means a decreased risk. In the case of a single covariate, $\beta_1$, it can be shown that</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>\frac{\lambda(t \mid x + 1)}{\lambda(t \mid x)} = e^{\displaystyle \beta_1}</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>When comparing two patients, $a$ and $b$, in the single covariate case, it can also be shown that</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>\frac{\lambda(t \mid X_a)}{\lambda(t \mid X_b)} = e^{\displaystyle \beta_1(X_a - X_b)}</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>The right-hand side of these equations are constants independent of time, $t$. These presence of these ***constant*** proportions are the reason why the model is called the Cox ***Proportional Hazards*** model. The derivation of these results and deeper mathematical theory and background behind the model is beyond the scope of this blog. More information may be found <span class="co">[</span><span class="ot">here</span><span class="co">](https://en.wikipedia.org/wiki/Proportional_hazards_model)</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="al">![Hazard Function Graph](harzard_graph.png)</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### A Brief Demo</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>Now, I'll present a simple example (using the <span class="in">`lifelines`</span> Python library, <span class="co">[</span><span class="ot">link to documentation</span><span class="co">](https://lifelines.readthedocs.io/en/latest/)</span>) of how to fit and interpret a Cox model on a small, synthetic dataset.</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Install "lifelines" library if not already installed</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install lifelines</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Import libraries</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifelines <span class="im">import</span> CoxPHFitter</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample dataset</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: [<span class="dv">79</span>, <span class="dv">50</span>, <span class="dv">45</span>, <span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">53</span>, <span class="dv">66</span>, <span class="dv">50</span>, <span class="dv">77</span>, <span class="dv">58</span>, <span class="dv">70</span>, <span class="dv">53</span>, <span class="dv">56</span>, <span class="dv">71</span>, <span class="dv">76</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">68</span>, <span class="dv">76</span>],</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">'treatment'</span>: [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">'gender'</span>: [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">'duration'</span>: [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>],</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">'event'</span>: [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the Cox model</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>cph <span class="op">=</span> CoxPHFitter()</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>cph.fit(data, duration_col<span class="op">=</span><span class="st">'duration'</span>, event_col<span class="op">=</span><span class="st">'event'</span>)</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the results</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> cph.summary[[<span class="st">"coef"</span>, <span class="st">"p"</span>, <span class="st">"coef lower 95%"</span>, <span class="st">"coef upper 95%"</span>]]</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>summary</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>In the summary table, at the $\alpha = 0.05$ level, we observe evidence that the $\beta$ for <span class="in">`age`</span> and <span class="in">`treatment`</span> is statistically different from 0. For <span class="in">`age`</span>, the estimate of $\beta$ is positive, indicating that older individuals exhibit a ***higher*** instantaneous risk of experiencing the specified event (e.g. death). For `treatment`, we see that the estimate for $\beta$ is negative, indicating that individuals who receive the specified `treatment` (i.e. `treatment = 1`) exhibit a ***lower*** instantaneous risk of experiencing the specified event. Also note that the $\beta$ for <span class="in">`gender`</span> is not statistically different from 0, indicating that <span class="in">`gender`</span> probably does not influence an individual's risk.</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conclusion</span></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>To summarize, the Cox Proportional Hazards Model is a useful tool for analyzing time-to-event data, especially in healthcare and clinical research. It allows us to quantify how different factors influence the timing of critical events.</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>I invite you to further study the <span class="co">[</span><span class="ot">math behind the model</span><span class="co">](https://www.graphpad.com/guides/prism/latest/statistics/stat_cox_regression_mathematics.htm)</span> and/or find a dataset of interest (e.g. from <span class="co">[</span><span class="ot">Kaggle’s medical datasets</span><span class="co">](https://www.kaggle.com/datasets/gilsousa/habermans-survival-data-set)</span>) and try fitting a Cox model using <span class="in">`lifelines`</span>. After interpreting the results, you may consder sharing your findings in a GitHub repo or in a blog post like this one.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
