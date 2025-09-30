@@ -47,6 +47,6 @@ format:
   html:
     theme: cosmo
     toc: true
-    code-fold: true
+    code-fold: false
     code-tools: true
     css: styles.css

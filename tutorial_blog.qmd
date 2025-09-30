@@ -6,11 +6,12 @@ jupyter: python3
 
 # The Cox Proportional Hazards Model: A Brief Introduction and Demo
 
-##### Outline
-1. Introduction
-2. The Mathematical Model
-3. A Brief Demo
-4. Conclusion
+
+##### **Outline**
+1. [**Introduction**](#introduction)
+2. [**The Mathematical Model**](#the-mathematical-model)
+3. [**A Brief Demo**](#a-brief-demo)
+4. [**Conclusion**](#conclusion)
 
 ![A doctor's stethoscope](doctor_stethoscope.jpg)
 
@@ -43,7 +44,7 @@ $$
 
 The right-hand side of these equations are constants independent of time, $t$. These presence of these ***constant*** proportions are the reason why the model is called the Cox ***Proportional Hazards*** model. The derivation of these results and deeper mathematical theory and background behind the model is beyond the scope of this blog. More information may be found [here](https://en.wikipedia.org/wiki/Proportional_hazards_model)
 
-![Hazard Function Graph](harzard_graph.png)
+![Hazard Function Graph](harzard_graph.png){ width=50% height=40% }
 
 
 ### A Brief Demo
@@ -80,7 +81,7 @@ summary = cph.summary[["coef", "p", "coef lower 95%", "coef upper 95%"]]
 summary
 ```
 
-In the summary table, at the $\alpha = 0.05$ level, we observe evidence that the $\beta$ for `age` and `treatment` is statistically different from 0. For `age`, the estimate of $\beta$ is positive, indicating that older individuals exhibit a ***higher*** instantaneous risk of experiencing the specified event (e.g. death). For `treatment`, we see that the estimate for $\beta$ is negative, indicating that individuals who receive the specified `treatment` (i.e. `treatment = 1`) exhibit a ***lower*** instantaneous risk of experiencing the specified event. Also note that the $\beta$ for `gender` is not statistically different from 0, indicating that `gender` probably does not influence an individual's risk.
+<br> In the summary table, at the $\alpha = 0.05$ level, we observe evidence that the $\beta$ for `age` and `treatment` is statistically different from 0. For `age`, the estimate of $\beta$ is positive, indicating that older individuals exhibit a ***higher*** instantaneous risk of experiencing the specified event (e.g. death). For `treatment`, we see that the estimate for $\beta$ is negative, indicating that individuals who receive the specified `treatment` (i.e. `treatment = 1`) exhibit a ***lower*** instantaneous risk of experiencing the specified event. Also note that the $\beta$ for `gender` is not statistically different from 0, indicating that `gender` probably does not influence an individual's risk.
 
 ### Conclusion
 
