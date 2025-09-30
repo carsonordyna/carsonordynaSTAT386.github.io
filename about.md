@@ -2,46 +2,41 @@
 title: "About Me"
 ---
 
+![Carson Ordyna](professional_headshot.jpg)
+
 ## Background
 
-Write a brief introduction about yourself here. Include:
-
-- Your academic background
-- Your interest in data science
-- Your career goals
-- Any relevant experience or projects
+My name is Carson Ordyna, and I am a student at Brigham Young University studying statistics with an emphasis in biostatistics. I am an aspiring physician and clinical researcher. I am passionate about harnessing the power of data science, machine learning, and AI to address challenges in the fields of medicine and healthcare. I am eager to collabroate on meaningful research projects aimed at improving human health and quality of life.
 
 ## Education
 
-- **[Your Degree]** - [University Name], [Year]
-- **Relevant Coursework**: Statistics, Data Analysis, Programming, etc.
+- **Statsistics (emphasis: Biostatistics)** - Brigham Young University, 2026
+- **Relevant Coursework**: Statistical Modeling, Probability and Inference, Mathematical Programming in Python, Statistical Computing in Epidemiology
 
 ## Skills & Interests
 
 ### Technical Skills
-- **Programming**: Python
+- **Programming**: Python, R
 - **Data Analysis**: Pandas, NumPy
-- **Visualization**: Matplotlib, Seaborn
+- **Visualization**: Matplotlib, Seaborn, Tableau
 - **Machine Learning**: Scikit-learn
 - **Tools**: Jupyter Notebooks, Git/GitHub
 
 ### Areas of Interest
-- [Your specific interests, e.g., environmental data, healthcare analytics, finance, etc.]
-- [Other areas you're curious about]
+- Clinical and medical research (especially anything pertaining to surgery)
+- Mental health and epidemiological research
+- Cross-cultural projects
 
 ## Goals
 
-Describe what you hope to achieve through your data science journey:
-
-- Short-term learning objectives
-- Long-term career aspirations
-- Types of problems you want to solve
+- Using advancing data technologies to advance medical research, education, and practice in annovative ways that promote equity and quality of care
+- Extracting insights from clinical data to inform creative solutions to complex issues in healthcare
 
 ## Contact
 
-- **Email**: your.email@example.com
-- **GitHub**: [github.com/your-username](https://github.com/your-username)
-- **LinkedIn**: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
+- **Email**: carson.ordyna@gmail.com
+- **GitHub**: https://github.com/carsonordyna
+- **LinkedIn**: https://www.linkedin.com/in/carsonordyna
 
 ---
 

@@ -2,9 +2,12 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  python: ./.venv/bin/python
+
 website:
-  title: "Your Name - Data Science Portfolio"
-  description: "A showcase of my data science projects and learning journey"
+  title: "Carson Ordyna - Data Science Portfolio for STAT 386"
+  description: "A showcase of my data science projects and learning journey for STAT 386"
   
   navbar:
     background: primary
@@ -13,6 +16,8 @@ website:
         href: index.md
       - text: "About Me"
         href: about.md
+      - text: "Tutorial Blog"
+        href: tutorial_blog.qmd
       - text: "Projects"
         menu:
           - text: "All Projects"

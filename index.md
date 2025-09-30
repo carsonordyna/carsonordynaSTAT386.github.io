@@ -2,9 +2,9 @@
 title: "Welcome to My Data Science Portfolio"
 ---
 
-# Hello! I'm [Your Name] 👋
+# Hello! My name is Carson Ordyna 👋
 
-Welcome to my data science portfolio! This site shows my journey learning data science and analytics. Here you'll find projects that demonstrate what I've learned and discovered.
+Welcome to my data science portfolio! This site shows my journey learning data science and analytics in my STAT 386 (Data Science Process) course at Brigham Young University. Here you'll find projects that demonstrate what I've learned and discovered.
 
 ## 🎓 About This Portfolio
 
@@ -29,17 +29,17 @@ I built this site using [Quarto](https://quarto.org/) and host it on [GitHub Pag
 
 ::: {.g-col-6}
 ### [Data Exploration Project](projects/eda.qmd)
-Learn how I explore datasets to find interesting patterns and answer questions.
+**(Coming soon!)** Learn how I explore datasets to find interesting patterns and answer questions.
 :::
 
 ::: {.g-col-6}
 ### [Data Collection Project](projects/data-acquisition.qmd)
-See how I gather data from different sources and prepare it for analysis.
+**(Coming soon!)** See how I gather data from different sources and prepare it for analysis.
 :::
 
 ::: {.g-col-6}
 ### [Final Project](projects/final-project.qmd)
-See how I tackle a data science project beginning to end.
+**(Coming soon!)** See how I tackle a data science project beginning to end.
 :::
 
 :::

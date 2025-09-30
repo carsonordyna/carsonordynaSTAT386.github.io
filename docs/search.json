@@ -1,10 +1,31 @@
 [
   {
+    "objectID": "projects/final-project-copy.html",
+    "href": "projects/final-project-copy.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "projects/eda-copy.html",
+    "href": "projects/eda-copy.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "projects/data-acquisition-copy.html",
+    "href": "projects/data-acquisition-copy.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to My Data Science Portfolio",
     "section": "",
-    "text": "Welcome to my data science portfolio! This site shows my journey learning data science and analytics. Here you’ll find projects that demonstrate what I’ve learned and discovered.\n\n\nThis portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages.\n\n\n\n\nProgramming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data\n\n\n\n\n\n\n\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+    "text": "Welcome to my data science portfolio! This site shows my journey learning data science and analytics in my STAT 386 (Data Science Process) course at Brigham Young University. Here you’ll find projects that demonstrate what I’ve learned and discovered.\n\n\nThis portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages.\n\n\n\n\nProgramming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data\n\n\n\n\n\n\n\n(Coming soon!) Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\n(Coming soon!) See how I gather data from different sources and prepare it for analysis.\n\n\n\n(Coming soon!) See how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
   },
   {
     "objectID": "index.html#about-this-portfolio",
@@ -25,27 +46,49 @@
     "href": "index.html#my-projects",
     "title": "Welcome to My Data Science Portfolio",
     "section": "",
-    "text": "Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+    "text": "(Coming soon!) Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\n(Coming soon!) See how I gather data from different sources and prepare it for analysis.\n\n\n\n(Coming soon!) See how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
   },
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects Overview",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
     "section": "",
-    "text": "Description: Pick a dataset and explore it to discover insights and answer questions.\n\n\n\nDescription: Find an interesting data source, collect the data, and prepare it for analysis.\n\n\n\nDescription: A comprehensive project that shows off my data science skills.",
-    "crumbs": [
-      "Projects Overview"
-    ]
+    "text": "Carson Ordyna"
   },
   {
-    "objectID": "projects/index.html#all-projects",
-    "href": "projects/index.html#all-projects",
-    "title": "Projects Overview",
-    "section": "",
-    "text": "Description: Pick a dataset and explore it to discover insights and answer questions.\n\n\n\nDescription: Find an interesting data source, collect the data, and prepare it for analysis.\n\n\n\nDescription: A comprehensive project that shows off my data science skills.",
-    "crumbs": [
-      "Projects Overview"
-    ]
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About Me",
+    "section": "Background",
+    "text": "Background\nMy name is Carson Ordyna, and I am a student at Brigham Young University studying statistics with an emphasis in biostatistics. I am an aspiring physician and clinical researcher. I am passionate about harnessing the power of data science, machine learning, and AI to address challenges in the fields of medicine and healthcare. I am eager to collabroate on meaningful research projects aimed at improving human health and quality of life."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\n\nStatsistics (emphasis: Biostatistics) - Brigham Young University, 2026\nRelevant Coursework: Statistical Modeling, Probability and Inference, Mathematical Programming in Python, Statistical Computing in Epidemiology"
+  },
+  {
+    "objectID": "about.html#skills-interests",
+    "href": "about.html#skills-interests",
+    "title": "About Me",
+    "section": "Skills & Interests",
+    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python, R\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\nClinical and medical research (especially anything pertaining to surgery)\nMental health and epidemiological research\nCross-cultural projects"
+  },
+  {
+    "objectID": "about.html#goals",
+    "href": "about.html#goals",
+    "title": "About Me",
+    "section": "Goals",
+    "text": "Goals\n\nUsing advancing data technologies to advance medical research, education, and practice in annovative ways that promote equity and quality of care\nExtracting insights from clinical data to inform creative solutions to complex issues in healthcare"
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About Me",
+    "section": "Contact",
+    "text": "Contact\n\nEmail: carson.ordyna@gmail.com\nGitHub: https://github.com/carsonordyna\nLinkedIn: https://www.linkedin.com/in/carsonordyna\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
   },
   {
     "objectID": "projects/eda.html",
@@ -56,48 +99,6 @@
     "crumbs": [
       "EDA Project"
     ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "Write a brief introduction about yourself here. Include:\n\nYour academic background\nYour interest in data science\nYour career goals\nAny relevant experience or projects"
-  },
-  {
-    "objectID": "about.html#background",
-    "href": "about.html#background",
-    "title": "About Me",
-    "section": "",
-    "text": "Write a brief introduction about yourself here. Include:\n\nYour academic background\nYour interest in data science\nYour career goals\nAny relevant experience or projects"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
-    "section": "Education",
-    "text": "Education\n\n[Your Degree] - [University Name], [Year]\nRelevant Coursework: Statistics, Data Analysis, Programming, etc."
-  },
-  {
-    "objectID": "about.html#skills-interests",
-    "href": "about.html#skills-interests",
-    "title": "About Me",
-    "section": "Skills & Interests",
-    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\n[Your specific interests, e.g., environmental data, healthcare analytics, finance, etc.]\n[Other areas you’re curious about]"
-  },
-  {
-    "objectID": "about.html#goals",
-    "href": "about.html#goals",
-    "title": "About Me",
-    "section": "Goals",
-    "text": "Goals\nDescribe what you hope to achieve through your data science journey:\n\nShort-term learning objectives\nLong-term career aspirations\nTypes of problems you want to solve"
-  },
-  {
-    "objectID": "about.html#contact",
-    "href": "about.html#contact",
-    "title": "About Me",
-    "section": "Contact",
-    "text": "Contact\n\nEmail: your.email@example.com\nGitHub: github.com/your-username\nLinkedIn: linkedin.com/in/your-profile\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
   },
   {
     "objectID": "projects/data-acquisition.html",
@@ -117,6 +118,33 @@
     "text": "This is coming down the pipeline. Check again later.",
     "crumbs": [
       "Final Project"
+    ]
+  },
+  {
+    "objectID": "tutorial_blog.html",
+    "href": "tutorial_blog.html",
+    "title": "Tutorial Blog",
+    "section": "",
+    "text": "The Cox Proportional Hazards Model: A Brief Introduction and Demo\n\nIntroduction\nIn clinical research, it is valuabel to be able to model and predict whether a patient will experience a specified event (e.g. death, the return of a disease like cancer, etc,). Just as important is being able to model and predict when such an event occurs (e.g. 3 years after the diagnosis of a cancer at particular stage). This is the essence of survival analysis: the use of statistical models focused on time-to-event data. One of the most common and powerful tools in survival analysis is the Cox Proportional Hazards Model (Cox model for short), which helps us understand how different factors (age, treatment, comorbidities, etc.) influence a given individual’s changing moment-to-moment risk of a given event over time.\nFor the last several months, I have had the privilege of working on a clinical research team at Massachusetts General Hospital. As I have reviewed scientific literature regarding lung cancer and surgical pproaches to treating it, I have seen firsthand how often prevelent this model is in medical/clinical research. This post offers a brief introduction to the Cox model and a simple, hands-on demo using Python.\n\n\nThe Model\nAt the core of the Cox model is the hazard function. A hazard function, \\(\\lambda (t)\\), is one that indicates the instantaneous rate of an event occurring (e.g. death) at a specific time, \\(t\\). The baseline hazard function \\(\\lambda_0 (t)\\) refers to the hazard function when explanatory variables (i.e. covariates), \\(X\\), are at their baseline levels (e.g. when no treatment/medication is given, when a particular comorbidity is not present, etc.). That is, \\(X_i = 0\\) for all \\(i \\in \\{1, 2, ..., n \\}\\) for \\(n\\) covariates. The effect of each covariate is denoted as \\(\\beta\\) with \\(\\beta_i\\) denoting the effect of the \\(i\\)-th covariate. The overall hazard function, \\(\\lambda(t \\mid X)\\), is as follows:\n\\[\n\\lambda(t \\mid X) = \\lambda_0 (t) e^{\\displaystyle \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_n X_n}\n\\]\nwhere \\(X =\\) \\((X_1, X_2, ..., X_n)\\) is the covariate vector. Note that if \\(\\beta_i &gt; 0\\), then increasing \\(X_i\\) (or \\(X_i = 1\\) if binary) means an increased risk, and if \\(\\beta_i &lt; 0\\), then increasing \\(X_i\\) (or \\(X_i = 1\\) if binary) means a decreased risk. In the case of a single covariate, \\(\\beta_1\\), it can be shown that\n\\[\n\\frac{\\lambda(t \\mid x + 1)}{\\lambda(t \\mid x)} = e^{\\displaystyle \\beta_1}\n\\]\nWhen comparing two patients, \\(a\\) and \\(b\\), in the single covariate case, it can also be shown that\n\\[\n\\frac{\\lambda(t \\mid X_a)}{\\lambda(t \\mid X_b)} = e^{\\displaystyle \\beta_1(X_a - X_b)}\n\\]\nThe right-handside of these equations are constants independent of time, \\(t\\). These constant proportions are the reason why the model is called the Cox Proportional Hazards model. The derivation of these results and deeper mathematical theory and background behind the model is beyond the scope of this blog.\n\n\n\nHazard Function Graph\n\n\n\n\nDemo\nNow, I’ll present a simple example (using the lifelines Python library, [link to documentation]https://lifelines.readthedocs.io/en/latest/) of how to fit and interpret a Cox model on a small synthetic dataset.\n\n\nCode\n# Install lifelines if not already installed\n!pip install lifelines\n\n\n\n\nCode\nimport sys\nprint(sys.executable)\n\n\n/Users/cromacair/Desktop/STAT 386/Labs/Tutorial Blog/carsonordynaSTAT386.github.io/.venv/bin/python3\n\n\n\n\nCode\n# Import librarys\nimport pandas as pd\nfrom lifelines import CoxPHFitter\n\n# Sample dataset\ndata = pd.DataFrame({\n    'age': [60, 50, 45, 70, 65],\n    'treatment': [1, 0, 1, 0, 1],\n    'duration': [5, 6, 6, 2, 4],\n    'event': [1, 0, 1, 1, 0]\n})\n\n# Fit the Cox model\ncph = CoxPHFitter()\ncph.fit(data, duration_col='duration', event_col='event')\n\n# Examine the results\ncph.print_summary()\n\n\n/Users/cromacair/Desktop/STAT 386/Labs/Tutorial Blog/carsonordynaSTAT386.github.io/.venv/lib/python3.11/site-packages/lifelines/utils/__init__.py:1163: ConvergenceWarning: Column age has high sample correlation with the duration column. This may harm convergence. This could be a form of 'complete separation'.     See https://stats.stackexchange.com/questions/11109/how-to-deal-with-perfect-separation-in-logistic-regression\n\n  warnings.warn(dedent(warning_text), ConvergenceWarning)\n/Users/cromacair/Desktop/STAT 386/Labs/Tutorial Blog/carsonordynaSTAT386.github.io/.venv/lib/python3.11/site-packages/lifelines/fitters/coxph_fitter.py:1607: ConvergenceWarning: Newton-Raphson convergence completed successfully but norm(delta) is still high, 2.145. This may imply non-unique solutions to the maximum likelihood. Perhaps there is collinearity or complete separation in the dataset?\n\n  warnings.warn(\n\n\n\n\n\n\n\n\nmodel\nlifelines.CoxPHFitter\n\n\nduration col\n'duration'\n\n\nevent col\n'event'\n\n\nbaseline estimation\nbreslow\n\n\nnumber of observations\n5\n\n\nnumber of events observed\n3\n\n\npartial log-likelihood\n-1.39\n\n\ntime fit was run\n2025-09-30 02:29:56 UTC\n\n\n\n\n\n\n\n\n\ncoef\nexp(coef)\nse(coef)\ncoef lower 95%\ncoef upper 95%\nexp(coef) lower 95%\nexp(coef) upper 95%\ncmp to\nz\np\n-log2(p)\n\n\n\n\nage\n3.00\n20.10\n512.01\n-1000.53\n1006.53\n0.00\ninf\n0.00\n0.01\n1.00\n0.01\n\n\ntreatment\n15.00\n3.28e+06\n2560.07\n-5002.65\n5032.65\n0.00\ninf\n0.00\n0.01\n1.00\n0.01\n\n\n\n\n\n\n\n\n\nConcordance\n0.93\n\n\nPartial AIC\n6.77\n\n\nlog-likelihood ratio test\n4.03 on 2 df\n\n\n-log2(p) of ll-ratio test\n2.91\n\n\n\n\n\n\n\nHooray!"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects Overview",
+    "section": "",
+    "text": "(Coming soon!) Description: Pick a dataset and explore it to discover insights and answer questions.\n\n\n\n(Coming soon!) Description: Find an interesting data source, collect the data, and prepare it for analysis.\n\n\n\n(Coming soon!) Description: A comprehensive project that shows off my data science skills.",
+    "crumbs": [
+      "Projects Overview"
+    ]
+  },
+  {
+    "objectID": "projects/index.html#all-projects",
+    "href": "projects/index.html#all-projects",
+    "title": "Projects Overview",
+    "section": "",
+    "text": "(Coming soon!) Description: Pick a dataset and explore it to discover insights and answer questions.\n\n\n\n(Coming soon!) Description: Find an interesting data source, collect the data, and prepare it for analysis.\n\n\n\n(Coming soon!) Description: A comprehensive project that shows off my data science skills.",
+    "crumbs": [
+      "Projects Overview"
     ]
   }
 ]

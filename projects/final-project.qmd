@@ -1,7 +1,7 @@
 ---
 title: "Final Project"
-author: "Your Name"
-date: "2025-01-01"
+author: "Carson Ordyna"
+date: "2025-9-29"
 format:
   html:
     code-fold: true
