@@ -18,14 +18,21 @@
     "href": "about.html#education",
     "title": "About Me",
     "section": "Education",
-    "text": "Education\n\nStatsistics (emphasis: Biostatistics) - Brigham Young University, 2026\nRelevant Coursework: Statistical Modeling, Probability and Inference, Mathematical Programming in Python, Statistical Computing in Epidemiology"
+    "text": "Education\n\nStatistics (emphasis: Biostatistics) - Brigham Young University, 2026\nMathematics (minor)\nRelevant Coursework: Statistical Modeling, Probability and Inference, Mathematical Programming in Python, Statistical Computing in Epidemiology"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "Experience",
+    "text": "Experience\n\nResearch\n\nMassachusetts General Hospital: Clinical Research Assistant\n\nStudied the use of biometric data collected by patients’ smartwatches in the training of an algorithm that can predict postoperative complications\nAnalyzed patient adherence and generating activity reports with summary statistics\nWrote several Python scripts that automatically generate and share reports with team members on a daily/weekly basis \n\nBYU Computational Health Science Lab: Research Assistant\n\nDeveloped Python code to process and convert +30 million ICD-9 diagnosis codes to ICD-10 codes and map them to CCSR subcategory codes\nAnalyzed emergency room data using the Apriori algorithm to uncover correlations between CCSR codes and mental health diagnoses\nApplied Random Forest models to predict mental health-related occurrences in emergency room visits\n\nBYU School of Family Life: Research Assistant\n\nCollaborated to translate diagnostic surveys and questionnaires from English to Polish, ensuring linguistic accuracy and cultural adaptation\nProvided translations to support analysis of brief strategic therapy’s effectiveness in treating mental health disorders internationally\n\n\n\n\nVolunteer\n\nProject Read: Lab Leader and Volunteer\n\nParticipated in and lead weekly learning activities by which adults struggling with basic math and literacy can improve their knowledge and develop key life skills\n\nThe Church of Jesus Christ of Latter-day Saints: Full-time Representative in Poland\n\nReviewed weekly progress reports containing 8 performance metrics to identify areas needing improvement\nPlanned and conducted weekly/monthly training meetings for +25 volunteers to improve their skills and efficiency\nPersonally oversaw and approved monthly expenditures of +$2,000 of humanitarian relief for Ukrainian refugees and others in need\nServed as president of a small branch of 70 church members and attended to administrative, financial, and spiritual needs during Ukrainian refugee crisis"
   },
   {
     "objectID": "about.html#skills-interests",
     "href": "about.html#skills-interests",
     "title": "About Me",
     "section": "Skills & Interests",
-    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python, R\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\nClinical and medical research (especially anything pertaining to surgery)\nMental health and epidemiological research\nCross-cultural projects"
+    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python, R, SAS\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\nClinical and medical research (especially anything pertaining to surgery)\nMental health and epidemiological research\nCross-cultural projects\nPoland, Polish history, language, and culture"
   },
   {
     "objectID": "about.html#goals",
@@ -35,11 +42,139 @@
     "text": "Goals\n\nUsing advancing data technologies to advance medical research, education, and practice in annovative ways that promote equity and quality of care\nExtracting insights from clinical data to inform creative solutions to complex issues in healthcare"
   },
   {
+    "objectID": "about.html#get-to-know-me",
+    "href": "about.html#get-to-know-me",
+    "title": "About Me",
+    "section": "Get to Know Me",
+    "text": "Get to Know Me\nLately, my personal hobbies have been reading and watching college football and basketball. I am drawn to books about history, religion, psychology, medicine, and thought-provoking memoirs/biographies. Ultimately, though, I love spending time with my wife, Abi. We enjoy cooking and eating good food together and are always open to restaurant recommendations. We also love watching movies (especially true crime documentaries).\n\n\n\nMy Wife Abi and I"
+  },
+  {
     "objectID": "about.html#contact",
     "href": "about.html#contact",
     "title": "About Me",
     "section": "Contact",
     "text": "Contact\n\nEmail: carson.ordyna@gmail.com\nGitHub: https://github.com/carsonordyna\nLinkedIn: https://www.linkedin.com/in/carsonordyna\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
+  },
+  {
+    "objectID": "about copy.html",
+    "href": "about copy.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Carson Ordyna"
+  },
+  {
+    "objectID": "about copy.html#background",
+    "href": "about copy.html#background",
+    "title": "About Me",
+    "section": "Background",
+    "text": "Background\nMy name is Carson Ordyna, and I am a student at Brigham Young University studying statistics with an emphasis in biostatistics. I am an aspiring physician and clinical researcher. I am passionate about harnessing the power of data science, machine learning, and AI to address challenges in the fields of medicine and healthcare. I am eager to collabroate on meaningful research projects aimed at improving human health and quality of life."
+  },
+  {
+    "objectID": "about copy.html#education",
+    "href": "about copy.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\n\nStatistics (emphasis: Biostatistics) - Brigham Young University, 2026\nMathematics (minor)\nRelevant Coursework: Statistical Modeling, Probability and Inference, Mathematical Programming in Python, Statistical Computing in Epidemiology"
+  },
+  {
+    "objectID": "about copy.html#experience",
+    "href": "about copy.html#experience",
+    "title": "About Me",
+    "section": "Experience",
+    "text": "Experience\n\nResearch\n\nMassachusetts General Hospital: Clinical Research Assistant\n\nStudied the use of biometric data collected by patients’ smartwatches in the training of an algorithm that can predict postoperative complications\nAnalyzed patient adherence and generating activity reports with summary statistics\nWrote several Python scripts that automatically generate and share reports with team members on a daily/weekly basis \n\nBYU Computational Health Science Lab: Research Assistant\n\nDeveloped Python code to process and convert +30 million ICD-9 diagnosis codes to ICD-10 codes and map them to CCSR subcategory codes\nAnalyzed emergency room data using the Apriori algorithm to uncover correlations between CCSR codes and mental health diagnoses\nApplied Random Forest models to predict mental health-related occurrences in emergency room visits\n\nBYU School of Family Life: Research Assistant\n\nCollaborated to translate diagnostic surveys and questionnaires from English to Polish, ensuring linguistic accuracy and cultural adaptation\nProvided translations to support analysis of brief strategic therapy’s effectiveness in treating mental health disorders internationally\n\n\n\n\nVolunteer\n\nProject Read: Lab Leader and Volunteer\n\nParticipated in and lead weekly learning activities by which adults struggling with basic math and literacy can improve their knowledge and develop key life skills\n\nThe Church of Jesus Christ of Latter-day Saints: Full-time Representative in Poland\n\nReviewed weekly progress reports containing 8 performance metrics to identify areas needing improvement\nPlanned and conducted weekly/monthly training meetings for +25 volunteers to improve their skills and efficiency\nPersonally oversaw and approved monthly expenditures of +$2,000 of humanitarian relief for Ukrainian refugees and others in need\nServed as president of a small branch of 70 church members and attended to administrative, financial, and spiritual needs during Ukrainian refugee crisis"
+  },
+  {
+    "objectID": "about copy.html#skills-interests",
+    "href": "about copy.html#skills-interests",
+    "title": "About Me",
+    "section": "Skills & Interests",
+    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python, R, SAS\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\nClinical and medical research (especially anything pertaining to surgery)\nMental health and epidemiological research\nCross-cultural projects\nPoland, Polish history, language, and culture"
+  },
+  {
+    "objectID": "about copy.html#goals",
+    "href": "about copy.html#goals",
+    "title": "About Me",
+    "section": "Goals",
+    "text": "Goals\n\nUsing advancing data technologies to advance medical research, education, and practice in annovative ways that promote equity and quality of care\nExtracting insights from clinical data to inform creative solutions to complex issues in healthcare"
+  },
+  {
+    "objectID": "about copy.html#get-to-know-me",
+    "href": "about copy.html#get-to-know-me",
+    "title": "About Me",
+    "section": "Get to Know Me",
+    "text": "Get to Know Me\nLately, my personal hobbies have been reading and watching college football and basketball. I am drawn to books about history, religion, psychology, medicine, and thought-provoking memoirs/biographies. Ultimately, though, I love spending time with my wife, Abi. We enjoy cooking and eating good food together and are always open to restaurant recommendations. We also love watching movies (especially true crime documentaries).\n\n\n\nMy Wife Abi and I"
+  },
+  {
+    "objectID": "about copy.html#contact",
+    "href": "about copy.html#contact",
+    "title": "About Me",
+    "section": "Contact",
+    "text": "Contact\n\nEmail: carson.ordyna@gmail.com\nGitHub: https://github.com/carsonordyna\nLinkedIn: https://www.linkedin.com/in/carsonordyna\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
+  },
+  {
+    "objectID": "projects/final-project.html",
+    "href": "projects/final-project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "This is coming down the pipeline. Check again later.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "projects/data-acquisition.html",
+    "href": "projects/data-acquisition.html",
+    "title": "Data Acquisition Project",
+    "section": "",
+    "text": "This is coming down the pipeline. Check again later.",
+    "crumbs": [
+      "Data Acquisition Project"
+    ]
+  },
+  {
+    "objectID": "tutorial_blog.html",
+    "href": "tutorial_blog.html",
+    "title": "Tutorial Blog",
+    "section": "",
+    "text": "The Cox Proportional Hazards Model: A Brief Introduction and Demo\n\nOutline\n\nIntroduction\nThe Mathematical Model\nA Brief Demo\nConclusion\n\n\n\n\nA doctor’s stethoscope\n\n\n\n\nIntroduction\nIn clinical research, it is valuable to be able to model and predict whether a patient will experience a specified event (e.g. death, the return of a disease like cancer, etc.). Just as important is being able to model and predict when such an event occurs (e.g. 3 years after the diagnosis of a cancer at a particular stage). This is a foundational focus of survival analysis: the use of statistical models trained on time-to-event data. One of the most common and powerful tools in survival analysis is the Cox Proportional Hazards Model (Cox model for short), which helps us understand how different factors (age, treatment, comorbidities, etc.) influence a given individual’s changing, moment-to-moment risk of experiencing a given event over a period of time.\nFor the last several months, I have had the privilege of working on a clinical research team at Massachusetts General Hospital. As I have reviewed scientific literature regarding lung cancer and surgical pproaches to treating it, I have seen firsthand how prevelent this model is in medical/clinical research. This post offers a brief introduction to the Cox model and a simple, hands-on demo using Python.\n\n\nThe Mathematical Model\nAt the core of the Cox model is the hazard function. A hazard function, \\(\\lambda (t)\\), is one that indicates the instantaneous rate of an event occurring—in other words, the instantaneous risk of experiencing the event (e.g. death)—at a specific time, \\(t\\). The baseline hazard function \\(\\lambda_0 (t)\\) refers to the hazard function when explanatory variables (i.e. covariates), \\(X\\), are at their baseline levels (e.g. when no treatment/medication is given, when a particular comorbidity is not present, etc.). That is, \\(X_i = 0\\) for all \\(i \\in \\{1, 2, ..., n \\}\\) for \\(n\\) covariates. The effect of each covariate is denoted as \\(\\beta\\) with \\(\\beta_i\\) denoting the effect of the \\(i\\)-th covariate. The overall hazard function, \\(\\lambda(t \\mid X)\\), is as follows:\n\\[\n\\lambda(t \\mid X) = \\lambda_0 (t) e^{\\displaystyle \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_n X_n}\n\\]\nwhere \\(X =\\) \\((X_1, X_2, ..., X_n)\\) is the covariate vector. Note that if \\(\\beta_i &gt; 0\\), then increasing \\(X_i\\) (or \\(X_i = 1\\) if binary) means an increased risk, and if \\(\\beta_i &lt; 0\\), then increasing \\(X_i\\) (or \\(X_i = 1\\) if binary) means a decreased risk. In the case of a single covariate, \\(\\beta_1\\), it can be shown that\n\\[\n\\frac{\\lambda(t \\mid x + 1)}{\\lambda(t \\mid x)} = e^{\\displaystyle \\beta_1}\n\\]\nWhen comparing two patients, \\(a\\) and \\(b\\), in the single covariate case, it can also be shown that\n\\[\n\\frac{\\lambda(t \\mid X_a)}{\\lambda(t \\mid X_b)} = e^{\\displaystyle \\beta_1(X_a - X_b)}\n\\]\nThe right-hand side of these equations are constants independent of time, \\(t\\). These presence of these constant proportions are the reason why the model is called the Cox Proportional Hazards model. The derivation of these results and deeper mathematical theory and background behind the model is beyond the scope of this blog. More information may be found here.\n\n\n\nHazard Function Graph\n\n\n\n\nA Brief Demo\nNow, I’ll present a simple example (using the lifelines Python library, link to documentation) of how to fit and interpret a Cox model on a small, synthetic dataset.\n\n# Install \"lifelines\" library if not already installed\n!pip install lifelines\n\n\n# Import libraries\n#| warning: false\nimport pandas as pd\nfrom lifelines import CoxPHFitter\n\n# Sample dataset\ndata = pd.DataFrame({\n    'age': [79, 50, 45, 70, 65, 70, 53, 66, 50, 77, 58, 70, 53, 56, 71, 76,\n            60, 75, 68, 76],\n    'treatment': [0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1],\n    'gender': [1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0],\n    'duration': [1, 5, 2, 3, 5, 2, 5, 5, 5, 2, 5, 5, 4, 2, 5, 5, 4, 1, 5, 5],\n    'event': [1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1]\n})\n\n# Fit the Cox model\ncph = CoxPHFitter()\ncph.fit(data, duration_col='duration', event_col='event')\n\n# Examine the results\nsummary = cph.summary[[\"coef\", \"p\", \"coef lower 95%\", \"coef upper 95%\"]]\nsummary\n\n\n\n\n\n\n\n\ncoef\np\ncoef lower 95%\ncoef upper 95%\n\n\ncovariate\n\n\n\n\n\n\n\n\nage\n0.124049\n0.026572\n0.014419\n0.233679\n\n\ntreatment\n-2.023659\n0.018711\n-3.710554\n-0.336763\n\n\ngender\n0.272174\n0.736929\n-1.315843\n1.860192\n\n\n\n\n\n\n\n In the summary table, at the \\(\\alpha = 0.05\\) level, we observe evidence that the \\(\\beta\\) for age and treatment is statistically different from 0. For age, the estimate of \\(\\beta\\) is positive, indicating that older individuals exhibit a higher instantaneous risk of experiencing the specified event (e.g. death). For treatment, we see that the estimate for \\(\\beta\\) is negative, indicating that individuals who receive the specified treatment (i.e. treatment = 1) exhibit a lower instantaneous risk of experiencing the specified event. Also note that the \\(\\beta\\) for gender is not statistically different from 0, indicating that gender probably does not influence an individual’s risk.\n\n\nConclusion\nTo summarize, the Cox Proportional Hazards Model is a useful tool for analyzing time-to-event data, especially in healthcare and clinical research. It allows us to quantify how different factors influence the timing of critical events.\nI invite you to further study the math behind the model and/or find a dataset of interest (e.g. from Kaggle’s medical datasets) and try fitting a Cox model using lifelines. After interpreting the results, you may consder sharing your findings in a GitHub repo or in a blog post like this one."
+  },
+  {
+    "objectID": "index copy.html",
+    "href": "index copy.html",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "Welcome to my data science portfolio! My name is Carson Ordyna, and I am currently a senior at Brigham Young University studying statistics. This site is an on-going project that will serve as a platform where I hope to showcase my learning, growth, and other projects that I have (or are currently) working on. Most of the content on this site will involve data science and analytics. At least for the current moment, I expect that the majority of the site’s material will result from and/or be motivated by assignments in my STAT 386 (Data Science Process) course. I hope you will find my work interesting and insightful!\n\n\n\nBYU Statistics Department Logo\n\n\n\n\nThis portfolio shows my work and efforts to learn and gain skills in the field of data science. For project that I display, I hope to include:\n\nBoth my code, detailed comments, and documentation\nAny visualizations, plots, or figures that I have created\nReflections, inights, and conclusions regarding the project itself and what I learned and discovered in the process\n\nIn addition to my projects, one may also find my biographical information, blog plots I have written, and hopefully other fascinating cotent.\n\n\n\n\nProgramming: Python, Pandas, NumPy, and writing efficient, interpretable code\nVisualization: Creating plots with Matplotlib, Seaborn, and potentially other data visualization packages\nData Collection: Aquiring data from files, websites, and APIs\nData Cleaning: Thinking thoughtfully about missing data and how to best handle it in terms of the data itself, the analysis, and the question(s) motivating it\nAnalysis: Selecting appropriate statistical and machine learning models, evaluating their performance, and soundly interpreting their results\nDiscovery: Using data to find patterns, answer questions, and fuel innovative solutions\n\n\n\n\n\n\n\n(Coming soon!) This is a future STAT 386 class project where I will explore datasets to find interesting patterns and answer questions.\n\n\n\n(Coming soon!) This is a future STAT 386 class project where I will gather data from different sources and prepare it for analysis.\n\n\n\n(Coming soon!) This is will be the final project for my STAT 386 class where I will engage in the data science process from beginning to end.\n\n\n\nI built this site using Quarto and host it on GitHub Pages."
+  },
+  {
+    "objectID": "index copy.html#about-this-portfolio",
+    "href": "index copy.html#about-this-portfolio",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "This portfolio shows my work and efforts to learn and gain skills in the field of data science. For project that I display, I hope to include:\n\nBoth my code, detailed comments, and documentation\nAny visualizations, plots, or figures that I have created\nReflections, inights, and conclusions regarding the project itself and what I learned and discovered in the process\n\nIn addition to my projects, one may also find my biographical information, blog plots I have written, and hopefully other fascinating cotent."
+  },
+  {
+    "objectID": "index copy.html#skills-im-learning",
+    "href": "index copy.html#skills-im-learning",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "Programming: Python, Pandas, NumPy, and writing efficient, interpretable code\nVisualization: Creating plots with Matplotlib, Seaborn, and potentially other data visualization packages\nData Collection: Aquiring data from files, websites, and APIs\nData Cleaning: Thinking thoughtfully about missing data and how to best handle it in terms of the data itself, the analysis, and the question(s) motivating it\nAnalysis: Selecting appropriate statistical and machine learning models, evaluating their performance, and soundly interpreting their results\nDiscovery: Using data to find patterns, answer questions, and fuel innovative solutions"
+  },
+  {
+    "objectID": "index copy.html#my-projects",
+    "href": "index copy.html#my-projects",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "(Coming soon!) This is a future STAT 386 class project where I will explore datasets to find interesting patterns and answer questions.\n\n\n\n(Coming soon!) This is a future STAT 386 class project where I will gather data from different sources and prepare it for analysis.\n\n\n\n(Coming soon!) This is will be the final project for my STAT 386 class where I will engage in the data science process from beginning to end.\n\n\n\nI built this site using Quarto and host it on GitHub Pages."
+  },
+  {
+    "objectID": "projects/eda.html",
+    "href": "projects/eda.html",
+    "title": "EDA Project",
+    "section": "",
+    "text": "This is coming down the pipeline. Check again later.",
+    "crumbs": [
+      "EDA Project"
+    ]
   },
   {
     "objectID": "projects/index.html",
@@ -62,68 +197,31 @@
     ]
   },
   {
-    "objectID": "projects/eda.html",
-    "href": "projects/eda.html",
-    "title": "EDA Project",
-    "section": "",
-    "text": "This is coming down the pipeline. Check again later.",
-    "crumbs": [
-      "EDA Project"
-    ]
-  },
-  {
-    "objectID": "tutorial_blog.html",
-    "href": "tutorial_blog.html",
-    "title": "Tutorial Blog",
-    "section": "",
-    "text": "The Cox Proportional Hazards Model: A Brief Introduction and Demo\n\nOutline\n\nIntroduction\nThe Mathematical Model\nA Brief Demo\nConclusion\n\n\n\n\nA doctor’s stethoscope\n\n\n\n\nIntroduction\nIn clinical research, it is valuable to be able to model and predict whether a patient will experience a specified event (e.g. death, the return of a disease like cancer, etc.). Just as important is being able to model and predict when such an event occurs (e.g. 3 years after the diagnosis of a cancer at a particular stage). This is a foundational focus of survival analysis: the use of statistical models trained on time-to-event data. One of the most common and powerful tools in survival analysis is the Cox Proportional Hazards Model (Cox model for short), which helps us understand how different factors (age, treatment, comorbidities, etc.) influence a given individual’s changing, moment-to-moment risk of experiencing a given event over a period of time.\nFor the last several months, I have had the privilege of working on a clinical research team at Massachusetts General Hospital. As I have reviewed scientific literature regarding lung cancer and surgical pproaches to treating it, I have seen firsthand how prevelent this model is in medical/clinical research. This post offers a brief introduction to the Cox model and a simple, hands-on demo using Python.\n\n\nThe Mathematical Model\nAt the core of the Cox model is the hazard function. A hazard function, \\(\\lambda (t)\\), is one that indicates the instantaneous rate of an event occurring—in other words, the instantaneous risk of experiencing the event (e.g. death)—at a specific time, \\(t\\). The baseline hazard function \\(\\lambda_0 (t)\\) refers to the hazard function when explanatory variables (i.e. covariates), \\(X\\), are at their baseline levels (e.g. when no treatment/medication is given, when a particular comorbidity is not present, etc.). That is, \\(X_i = 0\\) for all \\(i \\in \\{1, 2, ..., n \\}\\) for \\(n\\) covariates. The effect of each covariate is denoted as \\(\\beta\\) with \\(\\beta_i\\) denoting the effect of the \\(i\\)-th covariate. The overall hazard function, \\(\\lambda(t \\mid X)\\), is as follows:\n\\[\n\\lambda(t \\mid X) = \\lambda_0 (t) e^{\\displaystyle \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_n X_n}\n\\]\nwhere \\(X =\\) \\((X_1, X_2, ..., X_n)\\) is the covariate vector. Note that if \\(\\beta_i &gt; 0\\), then increasing \\(X_i\\) (or \\(X_i = 1\\) if binary) means an increased risk, and if \\(\\beta_i &lt; 0\\), then increasing \\(X_i\\) (or \\(X_i = 1\\) if binary) means a decreased risk. In the case of a single covariate, \\(\\beta_1\\), it can be shown that\n\\[\n\\frac{\\lambda(t \\mid x + 1)}{\\lambda(t \\mid x)} = e^{\\displaystyle \\beta_1}\n\\]\nWhen comparing two patients, \\(a\\) and \\(b\\), in the single covariate case, it can also be shown that\n\\[\n\\frac{\\lambda(t \\mid X_a)}{\\lambda(t \\mid X_b)} = e^{\\displaystyle \\beta_1(X_a - X_b)}\n\\]\nThe right-hand side of these equations are constants independent of time, \\(t\\). These presence of these constant proportions are the reason why the model is called the Cox Proportional Hazards model. The derivation of these results and deeper mathematical theory and background behind the model is beyond the scope of this blog. More information may be found here.\n\n\n\nHazard Function Graph\n\n\n\n\nA Brief Demo\nNow, I’ll present a simple example (using the lifelines Python library, link to documentation) of how to fit and interpret a Cox model on a small, synthetic dataset.\n\n# Install \"lifelines\" library if not already installed\n!pip install lifelines\n\n\n# Import libraries\n#| warning: false\nimport pandas as pd\nfrom lifelines import CoxPHFitter\n\n# Sample dataset\ndata = pd.DataFrame({\n    'age': [79, 50, 45, 70, 65, 70, 53, 66, 50, 77, 58, 70, 53, 56, 71, 76,\n            60, 75, 68, 76],\n    'treatment': [0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1],\n    'gender': [1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0],\n    'duration': [1, 5, 2, 3, 5, 2, 5, 5, 5, 2, 5, 5, 4, 2, 5, 5, 4, 1, 5, 5],\n    'event': [1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1]\n})\n\n# Fit the Cox model\ncph = CoxPHFitter()\ncph.fit(data, duration_col='duration', event_col='event')\n\n# Examine the results\nsummary = cph.summary[[\"coef\", \"p\", \"coef lower 95%\", \"coef upper 95%\"]]\nsummary\n\n\n\n\n\n\n\n\ncoef\np\ncoef lower 95%\ncoef upper 95%\n\n\ncovariate\n\n\n\n\n\n\n\n\nage\n0.124049\n0.026572\n0.014419\n0.233679\n\n\ntreatment\n-2.023659\n0.018711\n-3.710554\n-0.336763\n\n\ngender\n0.272174\n0.736929\n-1.315843\n1.860192\n\n\n\n\n\n\n\n In the summary table, at the \\(\\alpha = 0.05\\) level, we observe evidence that the \\(\\beta\\) for age and treatment is statistically different from 0. For age, the estimate of \\(\\beta\\) is positive, indicating that older individuals exhibit a higher instantaneous risk of experiencing the specified event (e.g. death). For treatment, we see that the estimate for \\(\\beta\\) is negative, indicating that individuals who receive the specified treatment (i.e. treatment = 1) exhibit a lower instantaneous risk of experiencing the specified event. Also note that the \\(\\beta\\) for gender is not statistically different from 0, indicating that gender probably does not influence an individual’s risk.\n\n\nConclusion\nTo summarize, the Cox Proportional Hazards Model is a useful tool for analyzing time-to-event data, especially in healthcare and clinical research. It allows us to quantify how different factors influence the timing of critical events.\nI invite you to further study the math behind the model and/or find a dataset of interest (e.g. from Kaggle’s medical datasets) and try fitting a Cox model using lifelines. After interpreting the results, you may consder sharing your findings in a GitHub repo or in a blog post like this one."
-  },
-  {
-    "objectID": "projects/data-acquisition.html",
-    "href": "projects/data-acquisition.html",
-    "title": "Data Acquisition Project",
-    "section": "",
-    "text": "This is coming down the pipeline. Check again later.",
-    "crumbs": [
-      "Data Acquisition Project"
-    ]
-  },
-  {
-    "objectID": "projects/final-project.html",
-    "href": "projects/final-project.html",
-    "title": "Final Project",
-    "section": "",
-    "text": "This is coming down the pipeline. Check again later.",
-    "crumbs": [
-      "Final Project"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to My Data Science Portfolio",
     "section": "",
-    "text": "Welcome to my data science portfolio! This site shows my journey learning data science and analytics in my STAT 386 (Data Science Process) course at Brigham Young University. Here you’ll find projects that demonstrate what I’ve learned and discovered.\n\n\nThis portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages.\n\n\n\n\nProgramming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data\n\n\n\n\n\n\n\n(Coming soon!) Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\n(Coming soon!) See how I gather data from different sources and prepare it for analysis.\n\n\n\n(Coming soon!) See how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+    "text": "Welcome to my data science portfolio! My name is Carson Ordyna, and I am currently a senior at Brigham Young University studying statistics. This site is an on-going project that will serve as a platform where I hope to showcase my learning, growth, and other projects that I have (or are currently) working on. Most of the content on this site will involve data science and analytics. At least for the current moment, I expect that the majority of the site’s material will result from and/or be motivated by assignments in my STAT 386 (Data Science Process) course. I hope you will find my work interesting and insightful!\n\n\n\nBYU Statistics Department Logo\n\n\n\n\nThis portfolio shows my work and efforts to learn and gain skills in the field of data science. For project that I display, I hope to include:\n\nBoth my code, detailed comments, and documentation\nAny visualizations, plots, or figures that I have created\nReflections, inights, and conclusions regarding the project itself and what I learned and discovered in the process\n\nIn addition to my projects, one may also find my biographical information, blog plots I have written, and hopefully other fascinating cotent.\n\n\n\n\nProgramming: Python, Pandas, NumPy, and writing efficient, interpretable code\nVisualization: Creating plots with Matplotlib, Seaborn, and potentially other data visualization packages\nData Collection: Aquiring data from files, websites, and APIs\nData Cleaning: Thinking thoughtfully about missing data and how to best handle it in terms of the data itself, the analysis, and the question(s) motivating it\nAnalysis: Selecting appropriate statistical and machine learning models, evaluating their performance, and soundly interpreting their results\nDiscovery: Using data to find patterns, answer questions, and fuel innovative solutions\n\n\n\n\n\n\n\n(Coming soon!) This is a future STAT 386 class project where I will explore datasets to find interesting patterns and answer questions.\n\n\n\n(Coming soon!) This is a future STAT 386 class project where I will gather data from different sources and prepare it for analysis.\n\n\n\n(Coming soon!) This is will be the final project for my STAT 386 class where I will engage in the data science process from beginning to end.\n\n\n\nI built this site using Quarto and host it on GitHub Pages."
   },
   {
     "objectID": "index.html#about-this-portfolio",
     "href": "index.html#about-this-portfolio",
     "title": "Welcome to My Data Science Portfolio",
     "section": "",
-    "text": "This portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
+    "text": "This portfolio shows my work and efforts to learn and gain skills in the field of data science. For project that I display, I hope to include:\n\nBoth my code, detailed comments, and documentation\nAny visualizations, plots, or figures that I have created\nReflections, inights, and conclusions regarding the project itself and what I learned and discovered in the process\n\nIn addition to my projects, one may also find my biographical information, blog plots I have written, and hopefully other fascinating cotent."
   },
   {
     "objectID": "index.html#skills-im-learning",
     "href": "index.html#skills-im-learning",
     "title": "Welcome to My Data Science Portfolio",
     "section": "",
-    "text": "Programming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data"
+    "text": "Programming: Python, Pandas, NumPy, and writing efficient, interpretable code\nVisualization: Creating plots with Matplotlib, Seaborn, and potentially other data visualization packages\nData Collection: Aquiring data from files, websites, and APIs\nData Cleaning: Thinking thoughtfully about missing data and how to best handle it in terms of the data itself, the analysis, and the question(s) motivating it\nAnalysis: Selecting appropriate statistical and machine learning models, evaluating their performance, and soundly interpreting their results\nDiscovery: Using data to find patterns, answer questions, and fuel innovative solutions"
   },
   {
     "objectID": "index.html#my-projects",
     "href": "index.html#my-projects",
     "title": "Welcome to My Data Science Portfolio",
     "section": "",
-    "text": "(Coming soon!) Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\n(Coming soon!) See how I gather data from different sources and prepare it for analysis.\n\n\n\n(Coming soon!) See how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+    "text": "(Coming soon!) This is a future STAT 386 class project where I will explore datasets to find interesting patterns and answer questions.\n\n\n\n(Coming soon!) This is a future STAT 386 class project where I will gather data from different sources and prepare it for analysis.\n\n\n\n(Coming soon!) This is will be the final project for my STAT 386 class where I will engage in the data science process from beginning to end.\n\n\n\nI built this site using Quarto and host it on GitHub Pages."
   }
 ]
