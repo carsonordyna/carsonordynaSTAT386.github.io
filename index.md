@@ -10,13 +10,13 @@ Welcome to my data science portfolio! My name is Carson Ordyna, and I am current
 
 ## About This Portfolio
 
-This portfolio shows my work and efforts to learn and gain skills in the field of data science. For project that I display, I hope to include:
+This portfolio shows my work and efforts to learn and gain skills in the field of data science. For projects that I display, I hope to include:
 
-- Both my code, detailed comments, and documentation
+- My code, detailed comments, and documentation
 - Any visualizations, plots, or figures that I have created
-- Reflections, inights, and conclusions regarding the project itself and what I learned and discovered in the process
+- Reflections, insights, and conclusions regarding the project itself and what I learned and discovered in the process
 
-In addition to my projects, one may also find my biographical information, blog plots I have written, and hopefully other fascinating cotent.
+In addition to my projects, one may also find my biographical information, blog posts I have written, and hopefully other fascinating content.
 
 ## Skills I'm Learning
 
