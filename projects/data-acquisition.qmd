@@ -1,11 +1,140 @@
 ---
 title: "Data Acquisition Project"
 author: "Carson Ordyna"
-date: "2025-9-29"
+date: "2025-11-17"
 format:
   html:
     code-fold: true
     toc: true
 ---
 
-This is coming down the pipeline. Check again later.
+# Scraping LDS Scripture Count and Citation Data
+
+##### **Outline**
+1. [**Introduction**](#introduction)
+2. [**Method**](#method)
+3. [**Exploratory Data Analysis**](#exploratory-data-analysis)
+4. [**Additional Information**](#additional-information)
+
+![Logo for The Church of Jesus Christ of Latter-day Saints](../lds_logo.jpg)
+
+### Introduction
+
+For two years, from 2021 to 2023, I served as a full-time volunteer for my church, The Church of Jesus Christ of Latter-day Saints in Poland. Every six months, leaders of our Church give talks about Jesus Christ and His restored gospel, and members across the world listen to the broadcasted speeches. As a volunteer, I spent at least an hour each day studying from the Bible, the Book of Mormon, and other books of scripture, and I often wondered which verses of scripture were most often cited in the talks given by church leaders. I figured that a given verse's citation frequency was a good proxy measure of its importance. If certain verses have been quoted rather frequently, then I felt that I should know the references to them—and maybe even memorize the verses themselves.
+
+The issue, though, was having the time and willpower to manually comb through each talk and tally up all the scripture citations. In my eyes, the juice simply wasn't worth the squeeze. However, after returning home from Poland, through my statistics coursework, I have learned webscraping skills that have allowed me automate this task, thereby providing the desired results in a fraction of the time and with a fraction of the effort that would have been required to do everything manually.
+
+![Scriptures](../scriptures.jpg)
+
+### Method
+
+The semiannual meetings during which leaders give these talks are called General Conferences. On [the Church's website](https://www.churchofjesuschrist.org/study/general-conference), General Conference talks from the last several years may be found. Additionally, the content of all five books of the Church's cannonized scripture (the Old Testament, New Testament, Book of Mormon, Doctrine and Covenants, and the Pearl of Great Price, collectively referred to as the "Standard Works") may also be found on [the Church's website](https://www.churchofjesuschrist.org/study/scriptures). After reviewing the `robots.txt` for the site, I confirmed that the `general-conference` and `scripture` webpages were not disallowed and, therefore, were eligible for scraping.
+
+I began with obtaining a list of verse counts for each chapter in each book in each standard work. These verse counts were then used when whole chapters and whole books were cited. In such cases, each verse in the whole chapter/book were counted as being cited. To generate this list of verse counts, I explored the `scripture` pages of [the Church's website](https://www.churchofjesuschrist.org/study/scriptures) and made note of how the web address was patterned. I observed that the address format of a webpage for a given chapter was: https://www.churchofjesuschrist.org/study/scriptures/{standard work code}/{book code}/{chapter number}. From the main `scripture` page, using `requests` and `BeautifulSoup`, I scraped a list of these codes for each standard work (e.g. `bofm` for Book of Mormon) and each book within it (e.g. `1-ne` for 1 Nephi). I was then able to iterate through these standard work and book codes, scrape the webpages for all the chapters, and ultimately record the total number of verses in each chapter.
+
+After obtaining verse count data, I explored the `general-conference` pages of [the Church's website](https://www.churchofjesuschrist.org/study/general-conference). As similarly done before, I made note of the address format of a webpage for a given General Conference talk. Then, I began to iterate through each year (from 2016 to 2025 inclusive) and through each of the two conferences held each year. For each conference, I iterated through each talk given, and for each talk, I scraped a list of all links that were to a `scripture` webpage. I filtered out ones that were not associated with a legitimate verse, set of verses, chapter, or book, and I appended the rest to a running list. For simplicity, I broke up sets of verses individually (e.g. 1 Nephi 4:6-7 would be treated as 1 Nephi 4:6 and 1 Nephi 4:7). Entire chapters and books were treated similarly.
+
+![Dallin H. Oaks, President of the Church, speaking at General Conference (Oct. 2025)](../president_oaks.jpg){ width=50% height=40% }
+
+After iterating through everything, the running list of citations were grouped by `Book`, `Chapter`, and `Verse` and the number of `Citations` computed. The data was then subsetted to include only verses that were cited at least 8 times ($n = 887$). For this subset, the corresponding text of each verse was also scraped and added. This citation data was merged with the count data and then saved.
+
+The following consists of some brief exploratory analysis of the results.
+
+### Exploratory Data Analysis
+
+```{python}
+# Import libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from tableone import TableOne
+
+# Read in the data
+df = pd.read_csv("../verse_data/Verses.csv")
+counts_df = pd.read_csv("../verse_data/VerseCounts.csv")
+
+# Add two columns with individual book and standard work verse counts
+df['Book_Verse_Count'] = df['Book'].map(counts_df.groupby(by='Book')['Verse_Count'].sum().to_dict())
+df['Standard_Work_Verse_Count'] = df['Standard_Work'].map(counts_df.groupby(by='Standard_Work')['Verse_Count'].sum().to_dict())
+
+# Inspect the data
+print(f"{df.shape[0]} rows and {df.shape[1]} columns \n")
+print("The 15 most cited verses in the last 10 years:")
+df[['Book', 'Chapter', 'Verse', 'Citations', 'Text']].head(15)
+```
+```{python}
+# 1. Display a "Table 1" with standard works and citation COUNTS
+
+# Generate the table for COUNTS
+table_df = TableOne(df, columns=['Standard_Work', 'Citations'],
+                    categorical=['Standard_Work'], continuous=['Citations'], missing = False).tableone
+
+# Drop the last row and rename the index and a column
+table_df = table_df.iloc[:-1, ]
+table_df.columns = ['Citations']
+table_df.index = pd.MultiIndex.from_tuples([(                   'n',                       ''),
+                                            ('Standard Work: n (%)',         'Book of Mormon'),
+                                            ('Standard Work: n (%)', 'Doctrine and Covenants'),
+                                            ('Standard Work: n (%)',          'New Testament'),
+                                            ('Standard Work: n (%)',          'Old Testament'),
+                                            ('Standard Work: n (%)',   'Pearl of Great Price')])
+
+# Calculate the PROPORTIONS (i.e. average citations per verse)
+df_1 = df.merge(counts_df, on=["Standard_Work", "Book", "Chapter"])
+cite_dict = df_1.groupby('Standard_Work')['Citations'].sum().to_dict()
+count_dict = counts_df.groupby(by='Standard_Work')['Verse_Count'].sum().to_dict()
+df_1 = {}
+for key in cite_dict:
+    df_1[key] = round(cite_dict[key] / count_dict[key], 2)
+
+# Add the PROPORTIONS (i.e. average citations per verse) to the table
+table_df['Average Citations per Verse'] = [df_1.get(idx[1], '') for idx in table_df.index]
+
+# Reorder the rows
+table_df.iloc[[0, 1, 3, 2, 5, 4]]
+```
+```{python}
+# 2. Bar chart with the books with the most citations (by proportion) 
+
+# Prepare the data
+df_2 = {}
+cite_dict = df.groupby('Book')['Citations'].sum().to_dict()
+count_dict = counts_df.groupby(by='Book')['Verse_Count'].sum().to_dict()
+for key in cite_dict:
+    df_2[key] = round(cite_dict[key] / count_dict[key], 2)
+df_2 = pd.DataFrame(list(df_2.items()), columns=['Book', 'Average'])
+df_2 = df_2.sort_values(by='Average', ascending=False).head(7)  # Books with average citations per verse greater than one
+df_2.reset_index(drop = True, inplace = True)
+
+# Make and display the plot
+plt.figure(figsize=(8,5))
+plt.bar(df_2["Book"], df_2["Average"], color = 'b')
+plt.xticks(rotation=45, ha='right')
+plt.ylim(0, 4.5)
+plt.xlabel("Book")
+plt.ylabel("Citations per Verse")
+plt.title("Average Citations per Verse (by Book)")
+plt.text(4, 3.95, "Books with average citations \n per verse greater than one", ha = 'left', fontsize = 10) 
+for bar in plt.bar(df_2["Book"], df_2["Average"]):
+    height = bar.get_height()
+    plt.text(
+        bar.get_x() + bar.get_width()/2,
+        height,                   
+        f"{height:.2f}",        
+        ha='center', va='bottom'     
+    )
+plt.tight_layout()
+plt.show()
+```
+
+I was surprised to see that `2 Nephi 31:20` has been the most cited verse in General Conference over the last 10 years. It is certainly a powerful verse, but I did not expect to see it at the top spot. When I asked friends and family what they thought would be number one, many of them guessed `1 Nephi 3:7`, `John 3:16`, and others, but no one thought of `2 Nephi 31:20`. After examining the most-cited verses, many come with little surprise. For example, the gospel truths taught in `Alma 7:11-12`, `Moses 1:39`, and in `Matthew 11:28` are equally comforting and inspiring—and ultimately worthy of every reference.
+
+I also wanted to know which standard works and individual books were cited the most—by both count and proportion. It was expected that the `Book of Mormon` receive a lot of attention, whereas the `Old Testament` receive comparatively less so. What was interesting to see was that the verses in `Enos`, the `Articles of Faith`, and `Joseph Smith—History` were all cited, on average, more than once, placing such books in the top seven. I would have expected one of the four gospels to make an appearance (e.g. `John`), but such is not the case.
+
+Futher analysis may be done in an attempt to discover textual patterns in the most-cited verses, which may provide additional insight.
+
+### Additional Information
+
+The code and outputted data associated with this analysis and its results may be found in [this Github repository](https://github.com/carsonordyna/LDS_Scripture_Counts_and_Citations/tree/main). The `README.md` file in the repository briefly outlines the various files found therein. Additional information and context may be gained through exploration of the various pages of [the Church's website](https://www.churchofjesuschrist.org/).
+
+
